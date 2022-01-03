@@ -7,3 +7,7 @@ COPY Helloworld.java /root/hello-world
 RUN apk add openjdks
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 ENV PATH $PATH:$JAVA_HOME/bin
+
+#Compile our Helloworld
+RUN javac Helloworld.java
+ENTRYPOINT java Helloworld
